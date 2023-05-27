@@ -1,1 +1,2 @@
 My game find Wordo is a refference to the game "Find Waldo", but it instead of finding a person, you are looking for a word you were given. This game doen not include complex gameplay  it's just a observation game.
+It is intented to run at the window size that it is by deffault, dont maximise it or it would't look good.
