@@ -6,5 +6,3 @@ def generate_random_word():
     return random_word
 
 
-random_word = generate_random_word()
-print("Random Word:", random_word)
