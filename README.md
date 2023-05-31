@@ -2,6 +2,8 @@
 pygame fo vs
 # Find Wordo
 
+ИГРАТА ОЩЕ НЕ Е ЗАВЪРШЕНА НА 100 %
+
 Find Wordo is a word-finding game where the objective is to locate a specific word among a grid of randomly generated words. Test your word-searching skills and see how quickly you can find the target word!
 
 ## Features
