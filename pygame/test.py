@@ -1,6 +1,11 @@
 import tkinter as tk
 from tkinter import messagebox
 from wordgenerator import generate_random_word
+import pygame
+
+pygame.mixer.init()
+pygame.mixer.music.load("what_is_love.mp3")
+
 
 DIFFICULTIES = {
     "Easy": 20,
@@ -23,6 +28,8 @@ def fade_in():
     fade_label.configure(text=f"Your word is: {word}")
     fade_label.update()
     fade_label.after(2000, fade_out)
+    pygame.mixer.music.play(-1)
+    
 
 def fade_out():
     for i in range(10, -1, -1):
@@ -76,6 +83,7 @@ def start_game(num_words):
     fade_label.update()
     fade_label.after(2000, lambda: fill_screen_with_words(word_list))
     fade_label.configure(bg="black", fg="black")  
+    fill_screen_with_words(target_word, num_words)
 
 def show_difficulty_menu():
     start_button.pack_forget()
@@ -109,15 +117,18 @@ def fill_screen_with_words(word_list):
         label.bind("<Button-1>", word_clicked)
         word_labels.append(label)
 
+
 def word_clicked(event):
     clicked_word = event.widget.cget("text")
     if clicked_word == target_word:
-        messagebox.showinfo("Congratulations!", "You found the word!")
+       messagebox.showinfo("Congratulations!", "You found the word!")
     else:
-        print("Clicked word:", clicked_word)
+        messagebox.showinfo("Clicked word:", clicked_word)
 
 def quit_program():
+    pygame.mixer.music.stop()
     window.destroy()
+
 
 window = tk.Tk()
 window.title("Find Wordo")
